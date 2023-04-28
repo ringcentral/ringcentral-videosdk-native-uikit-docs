@@ -70,13 +70,28 @@ If you are host or moderator, you can do remote audio/video mute/unmute here.
 
 <div align="left"><img src=img/participantList.png width=300><img src=img/participantMore.png width=300></div> 
 
-#### 2.2.4 Screen Sharing Action
-#### 2.2.5 Meeting Recording Action
+
+
+#### 2.2.4 More Action
+
+Some other extension functions are placed in the More menu, click the More button, you can pop up the menu list, select the required functions, currently there are two functions, recording and invite, later can support customization.
+
+<div align="left"><img src=img/morePage.png width=300><img src=img/moreMenu.png width=300></div>
+
+##### 2.2.4.1 Meeting Recording Action
+
 The recording button<img src=img/startRecord.png width=40> will be displayed in the Meeting Bottom Bar if your account has recording rights, otherwise it will not be displayed. With this button you can control start/pause/resume  recording. 
 
 <div align="left"><img src=img/record.png width=300><img src=img/pause.png width=300><img src=img/resume.png width=300></div>
 
+##### 2.2.4.2 Invite Others Action
+
+Currently, two invite methods are supported: copy meeting link and email. If you want to invite by email, you need to set an email account on your device. Otherwise, you can't invite others by email.
+
+<div align="left"><img src=img/invitePage.png width=300><img src=img/inviteOptions.png width=300></div>
+
 ### 2.3 Gallery 
+
 This is the layout of the RCVUIKit-iOS main page. Sliding pages are adopted. Basic information of up to three participants is displayed on each page.  
 Each participant has a corresponding cell in the gallery, used to display the participant of the video/audio/network/avatars and other information.
 

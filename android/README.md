@@ -89,6 +89,31 @@ When you are the host or moderator, you can control the start/pause/resume recor
 
 <div align="left"><img src=README.assets/image-20230406161249171.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230406161425153.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230406161523562.png width=300></div>
 
+### 2.2.5 More Action
+
+This action is aim to add the button besides what was mentioned above, or the custom button need to be add to meeting bottom bar.
+as the follow picture shows, the invite others,closed caption,virtual background buttons are add to more meeting bottom bar.
+<div align="left"><img src=README.assets/image_20230428_101855.png width=300 style="margin-right:10px;"><img src=README.assets/image_20230428_102000.png width=300 style="margin-right:10px;"></div>
+
+### 2.2.6 Invite Others Action
+
+You can click `More` button first, and then click `Invite others` button. 
+
+<div align="left"><img src=README.assets/image_20230428_101855.png width=300 style="margin-right:10px;"><img src=README.assets/image_20230428_103700.png width=300 style="margin-right:10px;"></div>
+
+There will show a popup, you can choose invite other by copy meeting link, or invite by email.
+
+<div align="left"><img src=README.assets/image_20230428_102008.png width=300 style="margin-right:10px;"></div>
+
+if you choose invite by copy meeting link, the meeting link will copy to system clipboard.
+
+<div align="left"><img src=README.assets/image_20230428_102051.png width=300 style="margin-right:10px;"></div>
+
+Corresponding to above, if you choose invite by email, uikit will generate the email content, you can choose a email app to send it.
+
+<div align="left"><img src=README.assets/image_20230428_102102.png width=300 style="margin-right:10px;"><img src=README.assets/invite_by_email.png width=300 style="margin-right:10px;"></div>
+
+
 ### 2.3 Gallery 
 
 This is the layout of the  RingCentral Video SDK UIKit-Android main page. Sliding pages are adopted. Basic information of up to three participants is displayed on each page.  
