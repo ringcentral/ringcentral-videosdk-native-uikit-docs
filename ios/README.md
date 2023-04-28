@@ -74,7 +74,7 @@ If you are host or moderator, you can do remote audio/video mute/unmute here.
 
 #### 2.2.4 More Action
 
-Some other extension functions are placed in the More menu, click the More button, you can pop up the menu list, select the required functions, currently there are two functions, recording and invite, later can support customization.
+Some other extension functions are placed in the More menu, click the More button, you can pop up the menu list, select the required functions, currently there are three functions, recording, invite and closed captions, later can support customization.
 
 <div align="left"><img src=img/morePage.png width=300><img src=img/moreMenu.png width=300></div>
 
@@ -90,12 +90,46 @@ Currently, two invite methods are supported: copy meeting link and email. If you
 
 <div align="left"><img src=img/invitePage.png width=300><img src=img/inviteOptions.png width=300></div>
 
-### 2.3 Gallery 
+##### 2.2.4.3 Closed Captions
+
+Closed captions is hidden captions.  When a meeting member is speaking, the voice can be converted into subtitles and displayed on the screen. The current support for English is good. Click the CC button<img src=img/ccbutton.png width=40> to enable the CC function. Click<img src=img/discc.png width=40>  again to disable the CC function.
+
+CC subtitles will be displayed for 5 seconds. If no one speaks for more than 5 seconds, the subtitles will disappear.
+
+<div align="left"><img src=img/enableCC.png width=300><img src=img/CC.png width=300><img src=img/DisableCC.png width=300></div>
+
+### 2.3 Lay Out
+
+There are currently two layouts, gallery and active speaker. The default layout is gallery. When there are more than one person in a meeting, the layout selection button is displayed to select the appropriate layout. 
+
+<div align="left"><img src=img/LayoutSwitch.png width=300></div>
+
+
+
+#### 2.3.1 Gallery
+
+
 
 This is the layout of the RCVUIKit-iOS main page. Sliding pages are adopted. Basic information of up to three participants is displayed on each page.  
 Each participant has a corresponding cell in the gallery, used to display the participant of the video/audio/network/avatars and other information.
 
 <div align="left"><img src=img/gallery.png width=300></div>
+
+
+
+#### 2.3.2 Active Speaker
+
+Display the active speaker in the middle. If no one is speaking, the first member who is not your own member is used by default. If the speaker changes, the screen switches. The video screen of the active speaker is displayed in the center area, and the network, audio, and name of the active speaker are displayed in the lower left corner.
+
+<div align="left"><img src=img/ActiveSpeaker.png width=300><img src=img/SpeakerVideo.png width=300></div>
+
+
+
+If local video is enabled, the image is displayed in the lower left corner of the lay out layout. You can drag to move the local video, or double click to zoom in (out) the local video.
+
+The camera switch button<img src=img/cameraButton.png width=40> in the upper right corner of the local video screen allows you to switch between the front and rear cameras.
+
+<div align="left"><img src=img/LocalVideo.png width=300><img src=img/LocalVideoMove.png width=300><img src=img/LocalVideoLarge.png width=300></div>
 
 ## 3.How to integrate RCVUIKit
 ### 3.1 Preparatory
