@@ -74,7 +74,7 @@ If you are host or moderator, you can do remote audio/video mute/unmute here.
 
 #### 2.2.4 More Action
 
-Some other extension functions are placed in the More menu, click the More button, you can pop up the menu list, select the required functions, currently there are three functions, recording, invite and closed captions, later can support customization.
+Some other extension functions are placed in the More menu, click the More button, you can pop up the menu list, select the required functions, currently there are four functions: recording, invite, closed captions and live transcription, later can support customization.
 
 <div align="left"><img src=img/morePage.png width=300><img src=img/moreMenu.png width=300></div>
 
@@ -97,6 +97,34 @@ Closed captions is hidden captions.  When a meeting member is speaking, the voic
 CC subtitles will be displayed for 5 seconds. If no one speaks for more than 5 seconds, the subtitles will disappear.
 
 <div align="left"><img src=img/enableCC.png width=300><img src=img/CC.png width=300><img src=img/DisableCC.png width=300></div>
+
+
+
+##### 2.2.4.4 Live Transcription
+
+Live Transcription, short name is LT, is real-time speech transcription. If your account supports LT, its button will be displayed in more menu when LT service is ready, as shown below:
+
+<div align="left"><img src=img/MoreNoLt.jpg width=300>----><img src=img/StartLt.jpg width=300></div>
+
+Click the LT button to enter the LT page:
+
+<div align="left"><img src=img/LTInit.jpg width=300></div>
+
+When someone speaks during the meeting, the LT transcript is displayed on the LT page:
+
+<div align="left"><img src=img/LTSpeak.jpg width=300></div>
+
+The LT page supports content search. Enter the content to be searched in the search box:
+
+<div align="left"><img src=img/LTSearch.jpg width=300></div>
+
+To the right of the search box is the LT control button, which can control the start and pause of the LT, visible only to the host or moderator:
+
+<div align="left"><img src=img/LTControl.jpg width=300></div>
+
+If LT is enabled, the LT button in the more menu changes to view transcription:
+
+<div align="left"><img src=img/ViewLt.jpg width=300></div>
 
 ### 2.3 Lay Out
 
