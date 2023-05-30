@@ -95,7 +95,7 @@ This action is aim to add the button besides what was mentioned above, or the cu
 as the follow picture shows, the invite others,closed caption,virtual background buttons are add to more meeting bottom bar.
 <div align="left"><img src=README.assets/image_20230428_101855.png width=300 style="margin-right:10px;"><img src=README.assets/image_20230428_102000.png width=300 style="margin-right:10px;"></div>
 
-### 2.2.6 Invite Others Action
+#### 2.2.6 Invite Others Action
 
 You can click `More` button first, and then click `Invite others` button. 
 
@@ -113,13 +113,60 @@ Corresponding to above, if you choose invite by email, uikit will generate the e
 
 <div align="left"><img src=README.assets/image_20230428_102102.png width=300 style="margin-right:10px;"><img src=README.assets/invite_by_email.png width=300 style="margin-right:10px;"></div>
 
+#### 2.2.7Live Transcription
 
-### 2.3 Gallery 
+Live Transcription, short name is LT, is real-time speech transcription. If your account supports LT, its button will be displayed in more menu when LT service is ready, as shown below:
+
+<div align="left"><img src=README.assets/image-20230530134102053.png width=300>----><img src=README.assets/image-20230530134229148.png width=300></div>
+
+Click the LT button to enter the LT page:
+
+<div align="left"><img src=README.assets/image-20230530153622464.png width=300></div>
+
+When someone speaks during the meeting, the LT transcript is displayed on the LT page:
+
+<div align="left"><img src=README.assets/image-20230530160449846.png width=300></div>
+
+The LT page supports content search. Enter the content to be searched in the search box:
+
+<div align="left"><img src=README.assets/image-20230530160611273.png width=300></div>
+
+To the right of the search box is the LT control button, which can control the start and pause of the LT, visible only to the host or moderator:
+
+<div align="left"><img src=README.assets/image-20230530160716895.png width=300></div>
+
+If LT is enabled, the LT button in the more menu changes to view transcription:
+
+<div align="left"><img src=README.assets/image-20230530134318809.png width=300></div>
+
+### 2.3 Layout
+
+There are currently two layouts, gallery and active speaker. The default layout is active speaker. When there are more than one person in a meeting, the layout selection button is displayed to select the appropriate layout.
+
+<div align="left"><img src=README.assets/image-20230530131551746.png width=300></div>
+
+
+
+#### 2.3.1 Gallery 
 
 This is the layout of the  RingCentral Video SDK UIKit-Android main page. Sliding pages are adopted. Basic information of up to three participants is displayed on each page.  
 Each participant has a corresponding cell in the gallery, used to display the participant of the video/avatars and other information.
 
 <div align="left"><img src=README.assets/image-20230406133026908.png width=300></div>
+
+
+
+#### 2.3.2 Active Speaker
+
+Display the active speaker in the middle. If no one is speaking, the first member who is not your own member is used by default. If the speaker changes, the screen switches. The video screen of the active speaker is displayed in the center area, and the network, audio, and name of the active speaker are displayed in the lower left corner.
+
+<div align="left"><img src=README.assets/image-20230530132444486.png width=300></div>
+
+If local video is enabled, the image is displayed in the lower left corner of the lay out layout. You can drag to move the local video.
+
+The camera switch button[![img](README.assets/cameraButton.png)in the upper right corner of the local video screen allows you to switch between the front and rear cameras.
+
+<div align="left"><img src=README.assets/image-20230530132959944.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230530133021735.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230530133114909.png width=300"></div>
 
 
 
