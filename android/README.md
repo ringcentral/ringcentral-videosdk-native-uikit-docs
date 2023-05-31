@@ -207,6 +207,17 @@ The RingCentral Video SDK UIKit-Android component library implements the UI and 
    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
    implementation 'com.ringcentral.video:ringcentral-video-sdk:version'
    implementation 'com.ringcentral.video:ringcentral-video-sdk-uikit:version'
+   implementation "io.github.scwang90:refresh-layout-kernel:2.0.6"
+   implementation "io.github.scwang90:refresh-header-classics:2.0.6"
+   ```
+
+3. Open the **gradle.properties** file in the root directory of your project.
+
+   If the line `android.enableJetifier=true` and `android.useAndroidX=true` doesn't exist in the file, you can add it directly at the end. If the line already exists but its value is `false`, you can change it to `true`.
+   
+   ```groovy
+   android.useAndroidX=true
+   android.enableJetifier=true
    ```
 
 - **Create a RingCentral Client Video SDK instance**
@@ -258,6 +269,7 @@ The RingCentral Video SDK UIKit-Android component library implements the UI and 
           }
   }
   ```
+  
 - **Start or Join a meeting**
 
 ### 3.2 How to use RingCentral Video SDK UIKit
