@@ -89,13 +89,14 @@ When you are the host or moderator, you can control the start/pause/resume recor
 
 <div align="left"><img src=README.assets/image-20230406161249171.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230406161425153.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230406161523562.png width=300></div>
 
-### 2.2.5 More Action
+### 2.2.6 More Action
 
 This action is aim to add the button besides what was mentioned above, or the custom button need to be add to meeting bottom bar.
 as the follow picture shows, the invite others,closed caption,virtual background buttons are add to more meeting bottom bar.
+
 <div align="left"><img src=README.assets/image_20230428_101855.png width=300 style="margin-right:10px;"><img src=README.assets/image_20230428_102000.png width=300 style="margin-right:10px;"></div>
 
-#### 2.2.6 Invite Others Action
+#### 2.2.6.1 Invite Others Action
 
 You can click `More` button first, and then click `Invite others` button. 
 
@@ -113,7 +114,17 @@ Corresponding to above, if you choose invite by email, uikit will generate the e
 
 <div align="left"><img src=README.assets/image_20230428_102102.png width=300 style="margin-right:10px;"><img src=README.assets/invite_by_email.png width=300 style="margin-right:10px;"></div>
 
-#### 2.2.7Live Transcription
+#### 2.2.6.2 Closed Captions
+
+Closed captions is hidden captions. When a meeting member is speaking, the voice can be converted into subtitles and displayed on the screen. The current support for English is good. Click the CC button <img src=README.assets/image-20230629134508082.png width=40>to enable the CC function. Click<img src=README.assets/image-20230629134647094.png width=40> again to disable the CC function.
+
+CC subtitles will be displayed for 5 seconds. If no one speaks for more than 5 seconds, the subtitles will disappear.
+
+<div align="left"><img src=README.assets/image-20230629135403845.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230629135348697.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230629135309781.png width=300"></div>
+
+
+
+#### 2.2.6.3 Live Transcription
 
 Live Transcription, short name is LT, is real-time speech transcription. If your account supports LT, its button will be displayed in more menu when LT service is ready, as shown below:
 
@@ -143,13 +154,13 @@ If LT is enabled, the LT button in the more menu changes to view transcription:
 
 There are currently two layouts, gallery and active speaker. The default layout is active speaker. When there are more than one person in a meeting, the layout selection button is displayed to select the appropriate layout.
 
-<div align="left"><img src=README.assets/image-20230530131551746.png width=300></div>
+<div align="left"><img src=README.assets/image-20230629142119477.png width=300></div>
 
 
 
 #### 2.3.1 Gallery 
 
-This is the layout of the  RingCentral Video SDK UIKit-Android main page. Sliding pages are adopted. Basic information of up to three participants is displayed on each page.  
+This is the layout of the  RingCentral Video SDK UIKit-Android gallery page. Sliding pages are adopted. Basic information of up to three participants is displayed on each page.  
 Each participant has a corresponding cell in the gallery, used to display the participant of the video/avatars and other information.
 
 <div align="left"><img src=README.assets/image-20230406133026908.png width=300></div>
@@ -169,6 +180,52 @@ The camera switch button[![img](README.assets/cameraButton.png)in the upper righ
 <div align="left"><img src=README.assets/image-20230530132959944.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230530133021735.png width=300 style="margin-right:10px;"><img src=README.assets/image-20230530133114909.png width=300"></div>
 
 
+
+#### 2.3.2 Filmstrip
+
+This is the layout of the  RingCentral Video SDK UIKit-Android filmstrip page. Sliding pages are adopted. Basic information of up to three participants is displayed on each page.  
+Each participant has a corresponding cell in the filmstrip, used to display the participant of the video/avatars and other information.
+
+- it shows the participants as filmstrip bar at the top of the window.
+- it shows the active speaker grid cell in the main content view.
+
+<div align="left"><img src=README.assets/image-20230629144038181.png width=300></div>
+
+
+
+#### 2.3.4 Custom Layout
+
+You can register your custom layout into Layout framework.
+
+- When select the custom layout menu item, it displays the custom layout content.
+
+##### 2.3.4.1 How to define Custom Layout ?
+
+Please register the custom layout configration as below: [demo](https://github.com/ringcentral/ringcentral-videosdk-android-samples/tree/main/samples/QuickStartUiKit)
+
+```kotlin
+private var customView: CustomLayoutView? = null
+private var meetingFragment: RCVMeetingView? = null
+
+override fun onCreate(savedInstanceState: Bundle?) {
+  ...
+  val inflater = LayoutInflater.from(this)
+  customView = inflater.inflate(R.layout.custom_layout_view, null, false) as ViewGroup?
+  ...
+}
+
+
+override fun onMeetingJoin(meetingId: String?, errorCode: Long) {
+  ...
+   val bundle = bundleOf(RCVMeetingView.ARG_MEETING_ID to meetingId)
+   meetingFragment = RCVMeetingView()
+   meetingFragment!!.arguments = bundle
+   meetingFragment!!.setCustomLayoutView(customView)
+  ...
+}
+```
+
+<div align="left"><img src=README.assets/image-20230629142721430.png width=300></div>
 
 ## 3. How to integrate RingCentral Video SDK UIKit
 
@@ -225,7 +282,7 @@ The RingCentral Video SDK UIKit-Android component library implements the UI and 
   1. Use your client ID and client secret to initial the RCV client SDK engine as code below, the client ID and client secret are required.
 
   ```kotlin
-  RcvEngine.create(this.getApplicationContext(), <#client ID#>, <#client secret#>)
+  RcvEngine.create(this.getApplicationContext(), <#client ID#>, <#client secret#>, false)
   ```
 
   2. If you intend to host a meeting or access your extension information, such as the meeting list or the recording list, etc, follow the steps in our [RingCentral Video client SDK Dev Guide](https://ringcentral-ringcentral-video-api-docs.readthedocs-hosted.com/en/latest/client-sdk/authentication/) to procure the RingCentral authorization tokens and invoke the API method as code below.
@@ -248,14 +305,14 @@ The RingCentral Video SDK UIKit-Android component library implements the UI and 
               android:foregroundServiceType="mediaProjection"/>
   ```
   2. In the application's Activity or Fragment, create a ServiceConnection object to communicate with the Service. The ServiceConnection object will receive notifications when the Service is successfully bound or disconnected.
-
+  
   3. Bind the Service using the bindService() method in the Activityor Fragment and pass the ServiceConnection object. For example:
   ```kotlin
   Intent(this.context, MeetingService::class.java).also { intent ->
       requireContext().bindService(intent, connection, Context.BIND_AUTO_CREATE)
   }
   ```
-  
+
   4. Implement the onServiceConnected() and onServiceDisconnected() methods in the ServiceConnection object to receive notifications when the Service is successfully bound or disconnected. For example:
   ```kotlin
   private lateinit var meetingService: MeetingService
@@ -269,7 +326,19 @@ The RingCentral Video SDK UIKit-Android component library implements the UI and 
           }
   }
   ```
-  
+
+-  **Add the attribute tools:replace="android:fullBackupContent"**
+
+  1. Locate the `AndroidManifest.xml` file. It is usually found in the `app/src/main` directory of your project. Find the `application`  tag within the manifest file. Add the attribute tools:replace="android:fullBackupContent" to the `application`  tag.  For example:
+
+  ```xml
+    <application
+        ...
+        tools:replace="android:fullBackupContent">
+        ...
+    </application>
+  ```
+
 - **Start or Join a meeting**
 
 ### 3.2 How to use RingCentral Video SDK UIKit

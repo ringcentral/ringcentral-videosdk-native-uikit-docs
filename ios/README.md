@@ -98,8 +98,6 @@ CC subtitles will be displayed for 5 seconds. If no one speaks for more than 5 s
 
 <div align="left"><img src=img/enableCC.png width=300><img src=img/CC.png width=300><img src=img/DisableCC.png width=300></div>
 
-
-
 ##### 2.2.4.4 Live Transcription
 
 Live Transcription, short name is LT, is real-time speech transcription. If your account supports LT, its button will be displayed in more menu when LT service is ready, as shown below:
