@@ -126,15 +126,15 @@ If LT is enabled, the LT button in the more menu changes to view transcription:
 
 ### 2.3 Lay Out
 
-There are currently two layouts, gallery and active speaker. The default layout is gallery. When there are more than one person in a meeting, the layout selection button is displayed to select the appropriate layout. 
+Currently supports Active spekaer, Gallery, Film strip and Custom layout. The layout is active speaker by default. When there is more than one participant in a meeting, the lay out layout button is displayed to select a proper layout.
 
-<div align="left"><img src=img/LayoutSwitch.png width=300></div>
+The Film strip option is displayed only when there are more than two participants in a meeting. The Custom option is displayed only when the user sets the custom view.
+
+<div align="left"><img src=img/LayoutMainView.jpg width=300></div>
 
 
 
 #### 2.3.1 Gallery
-
-
 
 This is the layout of the RCVUIKit-iOS main page. Sliding pages are adopted. Basic information of up to three participants is displayed on each page.  
 Each participant has a corresponding cell in the gallery, used to display the participant of the video/audio/network/avatars and other information.
@@ -156,6 +156,44 @@ If local video is enabled, the image is displayed in the lower left corner of th
 The camera switch button<img src=img/cameraButton.png width=40> in the upper right corner of the local video screen allows you to switch between the front and rear cameras.
 
 <div align="left"><img src=img/LocalVideo.png width=300><img src=img/LocalVideoMove.png width=300><img src=img/LocalVideoLarge.png width=300></div>
+
+#### 2.3.3 Filmstrip
+
+filmstrip layout mainly consists of two parts: 
+
+- active speaker view: located in the middle
+
+- film list: it is used to display the information of the participants (in general, the active speaker is not displayed).  The film list is located at the bottom of the lay out in portrait mode and to the right of the lay out in landscape mode. 
+
+In portrait mode, the film list at the bottom shows a maximum of three people. When more than three people are displayed, you can slide left and right:  
+
+<div align="left"><img src=img/verticalLay.jpg width=300></div>
+
+
+In landscape mode, a maximum of four people are displayed in the film list on the right, and sliding up and down is supported when there are more than four people: 
+<div align="left"><img src=img/horizontalLay.jpg width=400></div>
+
+Each video is displayed in the corresponding view, and both support double-clicking to zoom in and out. The switch camera button is displayed in the upper right corner of the local video screen.
+<div align="left"><img src=img/ShowVideo.jpg width=300><img src=img/FullVideo.jpg width=300></div>
+
+If screen sharing is enabled in a meeting, the sharing screen is displayed in the middle of the layout, and the active speaker is added to the film list. After sharing is complete, the active speaker is displayed in the middle of the layout again. And the film list supports display and hiding.
+
+Portrait mode:
+<div align="left"><img src=img/verticalSharing.jpg width=300><img src=img/verticalFull.jpg width=300></div>
+
+Landscape mode:
+<div align="left"><img src=img/horizontalSharing.jpg width=500></div>
+
+<div align="left"><img src=img/horizontalFull.jpg width=500></div>
+
+#### 2.3.4 Custom
+You can register your custom layout into Layout framework.
+
+When select the custom layout menu item, it displays the custom layout content.
+
+The interface "RCVUIKitModuleManager.layout!.setCustomLayoutView" is used to set custom layout.
+<div align="left"><img src=img/SetCustom.jpg width=500></div>
+
 
 ## 3.How to integrate RCVUIKit
 ### 3.1 Preparatory
